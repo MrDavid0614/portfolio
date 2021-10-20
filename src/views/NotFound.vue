@@ -1,5 +1,5 @@
 <template>
-    <h1>{{ error }}</h1>
+    <h1>Error 404: Page Not Found</h1>
     <img
         src="@/assets/images/404.png"
         alt="Error 404"
@@ -9,12 +9,6 @@
 
 <script>
 export default {
-  computed: {
-    error () {
-      const defaultError = 'Error 404: Page Not Found'
-      return this.$route.params.error || defaultError
-    }
-  }
 }
 </script>
 

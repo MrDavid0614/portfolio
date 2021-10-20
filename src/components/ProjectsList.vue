@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-list">
+  <div class="grid grid-cols-3 gap-5">
     <ProjectsListItem
       v-for="project in projects"
       :key="project.id"
@@ -21,11 +21,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .projects-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-</style>

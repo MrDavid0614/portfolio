@@ -1,8 +1,9 @@
 import { createStore } from 'vuex'
-import { getProjectsFromApi } from '@/api'
+import { getSkillsFromApi, getProjectsFromApi } from '@/api'
 
 const store = createStore({
   state: {
+    skills: [],
     projects: []
   },
   getters: {
@@ -12,6 +13,9 @@ const store = createStore({
     }
   },
   mutations: {
+    setSkills (state, skills) {
+      state.skills = skills
+    },
     setProjects (state, projects) {
       state.projects = projects
     }
@@ -20,6 +24,10 @@ const store = createStore({
     async getProjects ({ commit }) {
       const projects = await getProjectsFromApi()
       commit('setProjects', projects)
+    },
+    async getSkills ({ commit }) {
+      const skills = await getSkillsFromApi()
+      commit('setSkills', skills)
     }
   }
 })

@@ -1,7 +1,11 @@
 <template>
-  <div class="project-container" @click="openProjectDetails( project.id )">
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description }}</p>
+  <div class="p-7 cursor-pointer group" @click="openProjectDetails( project.id )">
+      <img src="#" alt="Project image" class="w-4/5 h-4/5">
+      <h2 class="bg-gray-900 text-gray-300">
+        <span class="tag">&lt;</span>
+        {{ project.name }}
+        <span class="tag">/&gt;</span>
+      </h2>
   </div>
 </template>
 
@@ -21,14 +25,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.project-container {
-    padding: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-
-    &:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    }
-}
+<style scoped>
+  .tag {
+    @apply text-gray-900 transition-colors duration-500 group-hover:text-yellow-600
+  }
 </style>

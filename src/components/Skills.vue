@@ -9,23 +9,10 @@
 
 <script>
 export default {
-  created () {
-    this.getSkills()
-  },
-  data () {
-    return {
-      skills: []
-    }
-  },
-  methods: {
-    async getSkills () {
-      const skills = await fetch('https://portfolio-backend06.herokuapp.com/skills').then(res => res.json())
-      this.skills = skills
+  computed: {
+    skills () {
+      return this.$store.state.skills
     }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
