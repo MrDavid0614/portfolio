@@ -1,15 +1,23 @@
 <template>
+  <Navbar />
   <router-view/>
+  <Footer />
 </template>
 
 <script>
 import store from '@/store'
+import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   store,
   created () {
     this.$store.dispatch('getSkills')
     this.$store.dispatch('getProjects')
+  },
+  components: {
+    Navbar,
+    Footer
   }
 }
 </script>
